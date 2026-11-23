@@ -1,0 +1,170 @@
+:root {
+    --fondo: #1A2126;
+    --tarjeta: #3A4750;
+    --texto: #F5F2EB;
+}
+* {
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    padding: 20px;
+    background: var(--fondo);
+    color: var(--texto);
+    font-family: 'Inter', Arial, sans-serif;
+}
+h1, h2, .logo, .boton {
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+a {
+    color: inherit;
+}
+.cabecera, main, .pie {
+    max-width: 1150px;
+    margin: 0 auto;
+}
+.cabecera, .bienvenida, .tarjeta, .reportes, .pie {
+    background: var(--tarjeta);
+    border: 1px solid #60717A;
+    border-radius: 12px;
+}
+.cabecera {
+    min-height: 65px;
+    padding: 15px 25px;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.busqueda {
+    position: relative;
+    width: 17px;
+    height: 17px;
+    border: 2px solid var(--texto);
+    border-radius: 50%;
+}
+.busqueda::after {
+    content: '';
+    position: absolute;
+    right: -6px;
+    bottom: -3px;
+    width: 8px;
+    height: 2px;
+    background: var(--texto);
+    transform: rotate(45deg);
+}
+.boton {
+    display: inline-block;
+    padding: 12px 19px;
+    background: var(--texto);
+    color: var(--fondo);
+    border-radius: 25px;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+}
+.boton:hover {
+    background: #D8D4C9;
+}
+
+.contacto {
+    display: none;
+}
+.bienvenida { margin-bottom: 18px; padding: 65px 30px; text-align: center; }
+.etiqueta { margin: 0 0 15px; font-size: 12px; letter-spacing: 3px; }
+h1 { margin: 0 0 14px; font-size: 33px; }
+.texto-bienvenida { max-width: 580px; margin: 0 auto 23px; font-size: 15px; line-height: 1.6; }
+
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 18px;
+}
+.tarjeta {
+    min-height: 310px;
+    padding: 25px 22px;
+}
+.tarjeta h2 {
+    margin: 0 0 15px;
+    font-size: 18px;
+    text-align: center;
+}
+.tarjeta p { font-size: 14px; line-height: 1.5; }
+.tarjeta ul { padding-left: 19px; font-size: 14px; line-height: 1.9; }
+
+.reportes {
+    margin-bottom: 18px;
+    padding: 24px;
+    text-align: center;
+}
+.reportes h2 { margin: 0 0 18px; font-size: 21px; }
+
+.imagenes-reporte {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+    gap: 15px;
+}
+.imagenes-reporte img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+.pie { padding: 20px 25px; text-align: center; }
+.pie h2 { margin: 0 0 12px; font-size: 19px; }
+.pie-enlaces { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.pie-enlaces p { margin: 0; font-size: 12px; }
+.pie nav { display: flex; gap: 19px; }
+.pie nav a { font-size: 12px; text-decoration: none; }
+.pie nav a:hover { text-decoration: underline; }
+@media (min-width: 768px) and (max-width: 1023px) {
+    body { padding: 15px; }
+    .cabecera, main, .pie { max-width: 740px; }
+    .contacto { display: inline-block; }
+    .busqueda { display: none; }
+    .bienvenida { padding: 55px 22px; }
+    h1 { font-size: 25px; }
+    .tarjetas { gap: 12px; }
+    .tarjeta { min-height: 280px; padding: 18px 12px; }
+    .tarjeta h2 { font-size: 15px; }
+    .tarjeta p, .tarjeta ul { font-size: 12px; }
+    .imagenes-reporte { display: block; }
+    .grafico { display: none !important; }
+    .mapa { max-width: 100%; }
+}
+@media (max-width: 767px) {
+    body { padding: 10px; }
+    .cabecera, main, .pie { width: 100%; }
+    .cabecera { flex-direction: column; gap: 12px; padding: 17px 12px; }
+    .logo { font-size: 16px; }
+    .contacto { display: block; padding: 9px 25px; text-align: center; }
+    .busqueda { display: none; }
+    .bienvenida { padding: 33px 17px; }
+    .etiqueta { font-size: 9px; letter-spacing: 2px; }
+    h1 { font-size: 21px; }
+    .texto-bienvenida { font-size: 12px; }
+    .tarjetas { grid-template-columns: 1fr; gap: 10px; }
+    .tarjeta { min-height: auto; padding: 18px; text-align: center; }
+    .tarjeta h2 { font-size: 16px; }
+    .tarjeta p { font-size: 12px; }
+    .tarjeta ul { display: none; }
+    .reportes { padding: 20px 14px; }
+    .reportes h2 { font-size: 15px; }
+    .imagenes-reporte { display: block; }
+    .grafico { display: none !important; }
+    .pie { padding: 18px 10px; }
+    .pie h2 { font-size: 16px; }
+    .pie-enlaces, .pie nav { flex-direction: column; gap: 9px; }
+    .pie-enlaces p, .pie nav a { font-size: 11px; }
+}
